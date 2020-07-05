@@ -1,0 +1,46 @@
+<!-- This website was made by Landon#1000. -->
+<!-- Do not remove the above line. -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Verification</title> <!-- Feel free to customize the title.-->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<style>
+/* Change the background by changing the "background:url("") link." */
+.bg{background:url("https://i.ibb.co/YQTyd57/950x350-sky-blue-solid-color-background.jpg") 
+no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;width:100%;height:100%;position:absolute}p{color:white}a{color:white}.footer{position:fixed;left:0;bottom:0;width:100%;text-align:center;font-family:'Roboto';}.center{font-family:'Roboto';text-align:center;position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);font-size:24px}.input{background-color:transparent;border:none;border-bottom:1px solid white;box-sizing:border-box;font-size:18px;height:50px;padding:10px 0;width:200px}input:focus,textarea:focus{outline:none;color:white}.input:focus+.underline{transform:scale(1)}::-webkit-input-placeholder{color:white}:-moz-placeholder{color:white;opacity:1}::-moz-placeholder{color:white;opacity:1}:-ms-input-placeholder{color:white}::-ms-input-placeholder{color:white}::placeholder{color:white}body{width:100%;height:100%;overflow:hidden;margin:0}html{width:100%;height:100%;overflow:hidden}
+</style>
+</head>
+<body>
+	<div class="bg">
+	<div class="center">
+		<p>Please paste the username or user ID.</p>
+		<p>Typing in the form is disabled. <a href="#" onclick="popup()">Why?</a></p><input autocomplete="off" class="input" id="input" maxlength="0" oninput="check()" placeholder="Discord Username or ID" type="text">
+	</div>
+</div>
+</body>
+
+<script>
+// Change these.
+var username = "AkashD#0001" // Change this to your username.
+var username2 = "@" + username // This can be safely ignored.
+var id = "625039247564341278" // Change this to your ID.
+
+// Perform validity check. Minified for my sake.
+function check(){document.getElementById("input").value==username||document.getElementById("input").value==username2?(alert("The username you entered is mine."),document.getElementById("input").value=""):document.getElementById("input").value==id?(alert("The user ID you entered is mine."),document.getElementById("input").value=""):(alert("The username / ID you entered is not mine."),document.getElementById("input").value="")}
+
+// Perform popup upon clicking "Why?" Minified for my sake.
+function popup(){alert("Typing in the form is disabled due to the use of Greek unicode letters. \n \nPlease copy and paste the username or Discord ID to ensure 100% accuracy.")}
+
+// Disable typing in the form. Minified for my sake.
+$("input").bind("paste",function(t){$(this).attr("maxlength","1000")}),$("input").on("input",function(){$(this).attr("maxlength","0")});
+
+// Credits.
+console.log("This website was made by Landon#1000.");
+
+// Moving background.
+var lFollowX=0,lFollowY=0,x=0,y=0,friction=1/30;function moveBackground(){x+=(lFollowX-x)*friction;y+=(lFollowY-y)*friction;translate='translate('+x+'px, '+y+'px) scale(1.1)';$('.bg').css({'-webit-transform':translate,'-moz-transform':translate,'transform':translate});window.requestAnimationFrame(moveBackground)}$(window).on('mousemove click',function(e){var lMouseX=Math.max(-100,Math.min(100,$(window).width()/2-e.clientX));var lMouseY=Math.max(-100,Math.min(100,$(window).height()/2-e.clientY));lFollowX=(20*lMouseX)/100;lFollowY=(10*lMouseY)/100}); moveBackground();
+</script>
+</html>
